@@ -1,4 +1,4 @@
-# First Chapter
+# Introduction to Industrial Protocols
 
 In manufacturing environments and industrial automation contexts, it is not possible to make use of the same office-oriented networking systems as time criticality is not taken into consideration by those protocols.
 
