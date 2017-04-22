@@ -18,13 +18,16 @@ The standard defines 2 flavors for this PI:
 - **Lost frame** The delivery time is measured in case one frame is lost, thus retransmission is included in the value.
 
 ### Throughput RTE
-sdfdf
+Throughput $B_{\text{RT}}$, expressed in byte/s, of total amount of application data on one single link. If the network defines more links, this PI has to be expressed for each one of them.
 
 ### Non-RTE Bandwidth
-gfg
+This is the percentage of bandwidth which can be utilized for non real time traffic. This PI is related to the previous one by the following equation:
 
 $$
-\int_{-\infty}^\infty g(x) dx
+B_{\text{NRT}} = B - B \cdot (B_{\text{RT}} + \delta)
 $$
 
 So
+
+## Topology 
+Relation to delivery time
