@@ -36,7 +36,7 @@ The IEC 61158 standard specification is a document structured into 7 different s
 ## IEC 61784
 As we mentioned before, Ethernet is not part of the Fieldbus specification, however a standard has been created, related to IEC 61158, which provides guidelines for using Ethernet in automation environments. This standard is IEC 61784, referred to as: _Real Time Ethernet_.
 
-> IEC 61784 defines protocols for RT networking using Fieldbus, Ethernet and 802.3.
+> IEC 61784 defines protocols for RT networking using Fieldbus, Ethernet and IEEE 802.3.
 
 **Relation to IEC 61158** The standard basically refers to IEC 61158 and all its protocol sets in order to define up to 16 different protocol stacks (communication profile) which can be used in Automation. 
 
@@ -63,6 +63,8 @@ Since CPs can be many, they are all organized into families (following manufactu
 |:---:|:--------:|:----------:|
 | CPF-3 | Fieldbus | Profibus |
 | CPF-5 | Fieldbus | World-FIP |
-| CPF-13 | Ethernet 802.3 | Powerlink |
+| CPF-13 | Ethernet 802.3 | Ethernet PowerLink |
 | CPF-15 | Ethernet 802.3 | Modbus |
 | CPF-16 | Ethernet 802.3 | SERCOS |
+
+Families like Profibus and World-FIP are defined in IEC 61784-1, while all those specific to IEEE 802.3, like Ethernet PowerLink or Modbus, are defined in IEC 61784-2.
