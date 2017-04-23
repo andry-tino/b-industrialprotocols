@@ -4,7 +4,11 @@ The different sets of requirements in Industrial Automation caused manufacturers
 
 CPFs define a structure which is technology based. However IEC 61784-2 facilitates the choice of the proper CP by defining a set of _Performance Indicators_ with the purpose of rating the different CPs under specific perfromance-related quantities.
 
-Every PI has limits and ranges defined in the context of certain conditions, PIs are also connected together by a network of relationships. The use of PIs is supposed to facilitate the detection of the proper CP to be used in a factory or industrial environment which has specific requirements.
+Every PI has limits and ranges defined in the context of certain conditions, PIs are also connected together by a network of relationships. The use of PIs is supposed to facilitate the detection of the proper CP to be used in a factory or industrial environment which has specific requirements. Here we will consider the most common PI categories:
+
+- [Data capacity](pi.md#data-capacity-pis)
+- [Timing](pi.md#timing-pis)
+- [Topology](pi.md#topology-pis)
 
 ## Data capacity PIs
 CPs can be categorized basing on transmission capabilites. We find 3 very common PIs targeting this performance measure.
@@ -24,10 +28,13 @@ Throughput $$B_{\text{RT}}$$, expressed in byte/s, of total amount of applicatio
 This is the percentage of bandwidth which can be utilized for non real time traffic. This PI is related to the previous one by the following equation:
 
 $$
-B_{\text{NRT%}} = 100 \cdot \left(1 - 8 \cdot \frac{B_{\text{RT}}}{B} - \frac{\Delta}{B} \right)
+B_{\text{NRT%}} = 100 \cdot \left( 1 - 8 \cdot \frac{B_{\text{RT}}}{B} - \frac{\Delta}{B} \right)
 $$
 
 As it is possible to see, to relate $$B_{\text{NRT%}}$$ to the Throughput RTE $$B_{\text{RT}}$$ and the total bandwodth $$B$$, we subtract from the latter the fraction of bandwidth occupied by $$B_{\text{NRT%}}$$ (converted into bit/s as $$B$$ is expressed in such a way) and the fraction of bandwidth taken by overhead traffic (control frames for example).
 
-## Topology 
+## Timing PIs
+sdsd
+
+## Topology PIs
 Relation to delivery time
