@@ -48,10 +48,17 @@ The limitation comes from the fact that non-EPL nodes, which do not use the EPL 
 
 > However, EPL nodes can perfectly operate as normal Ethernet devices.
 
+### EPL network protection
 In order to overcome this issue, we must avoid mixing EPL and non-EPL devices on the same shared segment. Thus the network is split into more segments by a [router][router] or a [bridge][bridge], thus making the EPL segment a _protected Ethernet_.
 
+The protocol supports the possibility to actually structure the network into multiple protected segments, each one of them having one MN as bus arbitrator. Those MNs will communicate to each other thanks to a distributed clock synchronization mechanism implemented in [IEEE 1588](https://en.wikipedia.org/wiki/Precision_Time_Protocol).
+
+Also, every MN incorporates IP routing functionality in order to communicate with other EPL segments and also non-EPL segments. This allows an EPL network to scale and extend.
+
 ### Other characteristics
-EPL does not employ switches for collision avoidance. This mechanism is already guaranteed by the MN. However it is possible to build the shared segment by means of [hubs][hub].
+EPL does not employ switches for collision avoidance. This mechanism is already guaranteed by the MN. However it is possible to build the shared segment by means of [hubs][hub]. It is possible to deploy up to 10 hubs by cascading them, by exceeding this limit, requirements on delivery time and jitter might be compromised.
+
+Also, switches though not recommended, are actually not prohibited by EPL. However it would be meaningless to use them considering that the MN does the job!
 
 [router]: https://en.wikipedia.org/wiki/Router_(computing)
 [bridge]: https://en.wikipedia.org/wiki/Bridging_(networking)
