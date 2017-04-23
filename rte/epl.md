@@ -39,9 +39,13 @@ The asynchronous period is used to transmit non-real-time traffic. To signal all
 
 Here, time is still slotted and the MN grants access to the shared segment to one single CN or to itself in order to transmit one single asynchronous message only.
 
-How does the MN know which CN has acyclic data to transmit? Duering the isoschronous period, that CN was supposed to send that information in its PRes after being polled by the MN. 
+How does the MN know which CN has acyclic data to transmit? During the isoschronous period, that CN was supposed to send that information in its PRes after being polled by the MN. 
 
 **Important** EPL prefers using UDP/IP for asynchronous messages. 
+
+![EPL - Scenario](../assets/epl-3.png)
+
+The previous picture provides a good overview of a simple cycle where one MN handles 3 CNs.
 
 ## Network design
 EPL allows the possibility to connect to the network EPL and non-EPL devices. Of course, non-EPL nodes will use TCP/IP and Ethernet. However this possibility comes with a limitation: 
