@@ -115,7 +115,7 @@ This class includes CPs which can guarantee delivery times below $$\delta_D \leq
 **Infrastructure** To guarantee the delivery, it is sufficient to act on the protocol stack in order to differentiate the handling of non-real-time traffic from real-time one. By doing so, teal-time traffic will bypass TCP/IP and immediately reach the Ethernet lower layers, thus guaranteeing better delivery time and less jitter. [Realization on Top of Ethernet](top-ethernet.md) can support this class.
 
 ## Motion control class
-The strictest class of CPs requires delivery time around $$\delta_D \approx 1 \text{ms}$$ and a jitter of no more than $$\tau \leq 1 \text{\mu s}$$. So, as it is possible to assess, we also have requirements for periodic traffic.
+The strictest class of CPs requires delivery time around $$\delta_D \approx 1 \text{ms}$$ and a jitter of no more than $$\tau \leq 1 \mu\text{s}$$. So, as it is possible to assess, we also have requirements for periodic traffic.
 
 **Applications** CPs into this class are typically utilized motion control where time constraints reach highly demanding levels. Considering the requirement on jitter, time slotted approaches like [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access) are often deployed.
 
