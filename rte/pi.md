@@ -10,6 +10,8 @@ Every PI has limits and ranges defined in the context of certain conditions, PIs
 - [Timing](pi.md#timing-pis)
 - [Topology](pi.md#topology-pis)
 
+---
+
 ## Data capacity PIs
 CPs can be categorized basing on transmission capabilites. We find 3 very common PIs targeting this performance measure.
 
@@ -31,10 +33,56 @@ $$
 B_{\text{NRT}\%} = 100 \cdot \left( 1 - 8 \cdot \frac{B_{\text{RT}}}{B} - \frac{\Delta}{B} \right)
 $$
 
-As it is possible to see, to relate $$B_{\text{NRT}\%}$$ to the Throughput RTE $$B_{\text{RT}}$$ and the total bandwodth $$B$$, we subtract from the latter the fraction of bandwidth occupied by $$B_{\text{RT}}$$ (converted into bit/s as $$B$$ is expressed in such a way) and the fraction of bandwidth taken by overhead traffic (control frames for example).
+As it is possible to see, to relate $$B_{\text{NRT}\%}$$ to the Throughput RTE $$B_{\text{RT}}$$ and the total bandwodth $$B$$, we subtract from the latter the fraction of bandwidth occupied by $$B_{\text{RT}}$$ (converted into bit/s as $$B$$ is expressed in such a way) and the fraction of bandwidth taken by overhead traffic $$\Delta$$ (control frames for example).
 
 ## Timing PIs
-sdsd
+This is a set of PIs measuring the performance of protocols from the point of view of synchronization.
+
+### Time synchronization accuracy
+Some protocols require clock synchronization among different devices. We will see, for example, that [Profinet IO](profinetio.md) requires all IEEE 802.3 switches to be clock synchronized. 
+
+In order to measure how well synchronization is performed, this PI will measure the maximum deviation (skew) between the clocks of any pair of nodes in the network (requiring clock synchronization).
+
+### Non-time-based synchronization accuracy
+This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) of the cyclic behavior of any pair of nodes in the network.
+
+In real time systems, a very common class of exchanged data is _periodic data_ which is data sent from a node regularly at a given period $$T$$ (or, equivalently, rate $$f = T^{-1}$$). The jitter is computed on these periodic signales over their phases.
+
+This PI provides an indication over how accurate the periodicity of certain data flow is in a node transmitting periodic traffic. Usually jitter is expressed over [RMS](https://en.wikipedia.org/wiki/Root_mean_square).
+
+### Redundancy recovery time
+This PI is related to failure recovery and it measures the maximum amount of time required for the network to become fully operational after an internal failure.
 
 ## Topology PIs
-Relation to delivery time
+This category includes PIs related to the topology of the network and its structure.
+
+### Number of RTE end-stations
+It measures the maximum number of real time nodes (stations generating real time traffic) supported by the network. Note that we only take into consideration end-stations, it means that switches or other commuting devices are not included.
+
+This PI is typically associated to a CP in IEC 61784.
+
+### Basic network topology
+Indicates the topology supported by a network. We can have these possible topologies:
+
+- [Hierarchical star](https://en.wikipedia.org/wiki/Network_topology#Star)
+- [Ring](https://en.wikipedia.org/wiki/Network_topology#Ring)
+- [Daisy-chain](https://en.wikipedia.org/wiki/Network_topology#Daisy_chain)
+- A combination of any of the previous
+
+This PI is typically associated to a CP in IEC 61784.
+
+### Number of switches between RTE end-stations
+This PI defines a range for the number of supported switches in a network. 
+
+Since switches introduce delay due to address evaluation (remember that switches are not hubs, they deliver a frame on a specific port basing on the destination MAC address), it is important to understand how much of this overhead is supported by a protocol stack so that a network can successfully observe time criticalities.
+
+This PI is typically associated to a CP in IEC 61784.
+
+### Relation to delivery time
+There is a connection between the delivery time PI and all topology PIs we have introduced so far. 
+
+Take for example the delivery time and the number of switches in the network. It is not possible to define both independently as they are related to each other. The more switches we add, the more delay we introduce, thus the higher will the delivery time be!
+
+Another example is the topology. A ring vs a daisy chain is an important choice to make and it impacts the delivery time. A ring topology cuts in half the delivery time compared to a daisy chain in the worst case scenario.
+
+So, when customizing a network, it is important to calculate the delivery time from topology PIs.
