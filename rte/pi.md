@@ -51,7 +51,7 @@ Some protocols require clock synchronization among different devices. We will se
 In order to measure how well synchronization is performed, this PI will measure the maximum deviation (skew) between the clocks of any pair of nodes in the network (requiring clock synchronization).
 
 ### Non-time-based synchronization accuracy
-This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) $$\tau$$ of the cyclic behavior of any pair of nodes in the network.
+This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) $$\tau$$ (jitter can be interpreted as displacement from mean value: [Variance](https://en.wikipedia.org/wiki/Variance) or [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation)) of the cyclic behavior of any pair of nodes in the network.
 
 In real time systems, a very common class of exchanged data is _periodic data_ which is data sent from a node regularly at a given period $$T$$ (or, equivalently, rate $$f = T^{-1}$$). The jitter is computed on these periodic signales over their phases.
 
