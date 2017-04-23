@@ -11,6 +11,8 @@ EPL defines the following pillars in its architecture:
 - **Time-slotted scheduling** Time is divided into time slots, thus a [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access) is deployed.
 - **Shared Ethernet segment** All stations are connected to a shared bus link managed by the MN. Also, all communications are acked (since Ethernet is used).
 
+![EPL - Network structure](../assets/epl-1.png)
+
 This communication system is called: _Slot Communication Network Management_.
 
 ## Transmission scheduling
@@ -56,6 +58,10 @@ In order to overcome this issue, we must avoid mixing EPL and non-EPL devices on
 The protocol supports the possibility to actually structure the network into multiple protected segments, each one of them having one MN as bus arbitrator. Those MNs will communicate to each other thanks to a distributed clock synchronization mechanism implemented in [IEEE 1588](https://en.wikipedia.org/wiki/Precision_Time_Protocol).
 
 Also, every MN incorporates IP routing functionality in order to communicate with other EPL segments and also non-EPL segments. This allows an EPL network to scale and extend.
+
+![EPL - Network structure](../assets/epl-2.png)
+
+The picture shows a generic network with protected EPL segments.
 
 ### Other characteristics
 EPL does not employ switches for collision avoidance. This mechanism is already guaranteed by the MN. However it is possible to build the shared segment by means of [hubs][hub]. It is possible to deploy up to 10 hubs by cascading them, by exceeding this limit, requirements on delivery time and jitter might be compromised.
