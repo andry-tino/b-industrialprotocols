@@ -13,3 +13,6 @@ In order to successfully deploy a daisy chain network, or a ring which is also o
 
 ## Traffic handling
 In Modified Ethernet realization all real-time devices must modify the Ethernet protocol; however devices which do not send real-time traffic can avoid it and can simply employ the normal protocol stack (TCP/IP, UDP/IP on normal Ethernet) in order to send non-real-time traffic.
+
+## Case study
+A technology employed by several manufacturers implementing this realization is [Profinet IO](profinetio.md).
