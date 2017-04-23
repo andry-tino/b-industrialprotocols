@@ -23,7 +23,7 @@ PIs can provide a good way for selecting the CP which fits the most a certain se
 CPs can be categorized basing on transmission capabilites. We find 3 very common PIs targeting this performance measure.
 
 ### Delivery time
-This PI measures the time needed to convey a [Service Data Unit](https://en.wikipedia.org/wiki/Service_data_unit) (payload of message) from a source node to a destination node. The measurement is performed at Application level, thus the value includes all overheads introduced by the intermediate protocols in the stack.
+This PI measures the time $$\delta_D$$ needed to convey a [Service Data Unit](https://en.wikipedia.org/wiki/Service_data_unit) (payload of message) from a source node to a destination node. The measurement is performed at Application level, thus the value includes all overheads introduced by the intermediate protocols in the stack.
 
 The standard defines 2 flavors for this PI:
 
@@ -51,7 +51,7 @@ Some protocols require clock synchronization among different devices. We will se
 In order to measure how well synchronization is performed, this PI will measure the maximum deviation (skew) between the clocks of any pair of nodes in the network (requiring clock synchronization).
 
 ### Non-time-based synchronization accuracy
-This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) of the cyclic behavior of any pair of nodes in the network.
+This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) $$\tau$$ of the cyclic behavior of any pair of nodes in the network.
 
 In real time systems, a very common class of exchanged data is _periodic data_ which is data sent from a node regularly at a given period $$T$$ (or, equivalently, rate $$f = T^{-1}$$). The jitter is computed on these periodic signales over their phases.
 
@@ -99,10 +99,24 @@ So, when customizing a network, it is important to calculate the delivery time f
 The delivery time PI is used to define 3 different classes of CPs supporting 3 different time demanding contexts:
 
 ## Low speed class
-TODO
+Also labeled as _Human Control_, considers CPs whose delivery times are around $$\delta_D \approx 100 \text{ms}$$. The name suggests that this class of CPs are typical of systems where humans are involved for observation, monitoring and supervision. 
+
+The human eye can easily perceive differences which occur with a period of $$T = 100 \text{ms}$$, if a picture where to be shown for a period of time $$T$$, we would have an image processing rate of $$f = 10^{-2} \frac{\text{pic}}{ms}$$, or equivalently, of $$f = 10 \frac{\text{pic}}{s}$$, which is fine.
+
+**Applications** Typical applications span across process automation and building control.
+
+**Infrastructure** CPs which simply deploy TCP/IP commuication channels without any modifications are just fine and can handle the low requirements in time very well. [Realization on Top of TCP/IP](top-tcp-ip.md) can support this class.
 
 ## Process control class
-TODO
+This class includes CPs which can guarantee delivery times below $$\delta_D \leq 10 \text{ms}$$.
+
+**Applications** This class is typical of most tooling machines and is also utilized in machine control systems, [PLC](https://en.wikipedia.org/wiki/Programmable_logic_controller)s and PC-based control systems.
+
+**Infrastructure** To guarantee the delivery, it is sufficient to act on the protocol stack in order to differentiate the handling of non-real-time traffic from real-time one. By doing so, teal-time traffic will bypass TCP/IP and immediately reach the Ethernet lower layers, thus guaranteeing better delivery time and less jitter. [Realization on Top of Ethernet](top-ethernet.md) can support this class.
 
 ## Motion control class
-TODO
+The strictest class of CPs requires delivery time around $$\delta_D \approx 1 \text{ms}$$ and a jitter of no more than $$\tau \leq 1 \text{\mu s}$$. So, as it is possible to assess, we also have requirements for periodic traffic.
+
+**Applications** CPs into this class are typically utilized motion control where time constraints reach highly demanding levels. Considering the requirement on jitter, time slotted approaches like [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access) are often deployed.
+
+**Infrastructure** It is not possible to rely on TCP\IP, thus a solution modifying the Ethernet layers is required. Minimal throughput to be guaranteed is 100 Mbit/s ([Fast Ethernet](https://en.wikipedia.org/wiki/Fast_Ethernet) can be considered). It ight also be necessary to apply modification to hardware and to medium access strategies. [Realization Modified Ethernet](mod-ether.md) is the only possible option for supporting this class.
