@@ -120,3 +120,12 @@ The strictest class of CPs requires delivery time around $$\delta_D \approx 1 \t
 **Applications** CPs into this class are typically utilized motion control where time constraints reach highly demanding levels. Considering the requirement on jitter, time slotted approaches like [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access) are often deployed.
 
 **Infrastructure** It is not possible to rely on TCP\IP, thus a solution modifying the Ethernet layers is required. Minimal throughput to be guaranteed is 100 Mbit/s ([Fast Ethernet](https://en.wikipedia.org/wiki/Fast_Ethernet) can be considered). It ight also be necessary to apply modification to hardware and to medium access strategies. [Realization Modified Ethernet](mod-ether.md) is the only possible option for supporting this class.
+
+## Overview
+An overview of the classes is provided in the following table:
+
+| Class | Name | $$\delta_D$$ | $$\tau$$ | Applications | Realization |
+|:-----:|:----:|:------------:|:--------:|:-------------|:-----------:|
+| Class 1 | Low speed | $$\approx 100 \text{ms}$$ | N/A | Human control | [On Top of TCP/IP](top-tcp-ip.md) |
+| Class 2 | Process control | $$\leq 10 \text{ms}$$ | N/A | PLC, PC-control | [On Top of Ethernet](top-ethernet.md) |
+| Class 3 | Motion control | $$\approx 1 \text{ms}$$ | $$\leq 1 \mu\text{s}$$ | Motion control | [Modified Ethernet](mod-ether.md) |
