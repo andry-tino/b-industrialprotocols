@@ -2,6 +2,8 @@
 
 [EPL](http://www.ethernet-powerlink.org/) is a protocol defined by [Bernecker & Rainer (B&R)](https://www.br-automation.com). Now the protocol is also part of a standardization group.
 
+This protocol stack is defined as CP 13/1 in IEC 61784-2.
+
 ## Nertwork structure
 EPL defines the following pillars in its architecture:
 
@@ -59,6 +61,14 @@ Also, every MN incorporates IP routing functionality in order to communicate wit
 EPL does not employ switches for collision avoidance. This mechanism is already guaranteed by the MN. However it is possible to build the shared segment by means of [hubs][hub]. It is possible to deploy up to 10 hubs by cascading them, by exceeding this limit, requirements on delivery time and jitter might be compromised.
 
 Also, switches though not recommended, are actually not prohibited by EPL. However it would be meaningless to use them considering that the MN does the job!
+
+**Application Layer** EPL uses [CANopen](https://en.wikipedia.org/wiki/CANopen) as application layer.
+
+## Performance Indicators
+IEC 61784-2 defines 2 CPs for EPL: 
+
+- **13/1a** For small sized automation systems.
+- **13/1b** For large sized automation systems.
 
 [router]: https://en.wikipedia.org/wiki/Router_(computing)
 [bridge]: https://en.wikipedia.org/wiki/Bridging_(networking)
