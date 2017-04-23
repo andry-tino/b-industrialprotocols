@@ -10,6 +10,13 @@ Every PI has limits and ranges defined in the context of certain conditions, PIs
 - [Timing](pi.md#timing-pis)
 - [Topology](pi.md#topology-pis)
 
+## User application requirements
+PIs can provide a good way for selecting the CP which fits the most a certain set of requirements. However requirements have some very common profiles, so CPs are grouped into different categories by the range of values of some PIs, the most common is based on delivery time:
+
+- [Low speed class](pi.md#low-speed-class)
+- [Process control class](pi.md#process-control-class)
+- [Motion control class](pi.md#motion-control-class)
+
 ---
 
 ## Data capacity PIs
@@ -86,3 +93,16 @@ Take for example the delivery time and the number of switches in the network. It
 Another example is the topology. A ring vs a daisy chain is an important choice to make and it impacts the delivery time. A ring topology cuts in half the delivery time compared to a daisy chain in the worst case scenario.
 
 So, when customizing a network, it is important to calculate the delivery time from topology PIs.
+
+---
+
+The delivery time PI is used to define 3 different classes of CPs supporting 3 different time demanding contexts:
+
+## Low speed class
+TODO
+
+## Process control class
+TODO
+
+## Motion control class
+TODO
