@@ -6,7 +6,7 @@
   * [Performance Indicators](rte/pi.md)
   * [RTE realizations](rte/realizations.md)
     * [On top of TCP/IP](rte/top-tcp-ip.md)
-    * [On top of Ethernet](rte/top-ehternet.md)
+    * [On top of Ethernet](rte/top-ethernet.md)
       * [Ethernet PowerLink](rte/epl.md)
     * [Modified Ethernet](rte/mod-ether.md)
       * [Profinet IO](rte/profinetio.md)
