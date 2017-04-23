@@ -4,6 +4,8 @@
 
 This protocol stack is defined as CP 13/1 in IEC 61784-2.
 
+**Class** EPL fulfills the requirements for [Class 2](pi.md#process-control-class) in IEC 61784.
+
 ## Nertwork structure
 EPL defines the following pillars in its architecture:
 

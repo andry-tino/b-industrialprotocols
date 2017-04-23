@@ -25,7 +25,7 @@ As it is possible to see, both real-time and non-real-time traffic will follow t
 
 Profile 15/1 was initially defined by [Schneider Electric](http://www.schneider-electric.com/) and is one of the most widely used On Top of TCP/IP realizations in industrial applications today.
 
-**Class** Modbus fulfills the requirements for [Class 1](pi.md#los-speed-class) in IEC 61784.
+**Class** Modbus fulfills the requirements for [Class 1](pi.md#low-speed-class) in IEC 61784.
 
 ### Capabilities
 Modbus 15/1 iis very simple client/server protocol and implements services for reading and writing data objects. The end user must extend the services with its own specific readers and writers. The DLL protocol being used is TCP/IP.
