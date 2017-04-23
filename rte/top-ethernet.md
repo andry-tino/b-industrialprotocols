@@ -46,3 +46,6 @@ In order to have both IEEE 802.3 and Ethernet II devices cohexist and communicat
 
 1. If the data length is higher than 1500 bytes, then the frame must be an Ethernet II frame and the field being read is actually the upper protocol identifier.
 2. Otherwise, if the data length is lower or equal to 1500 bytes, then the frame is an IEEE 802.3 frame and the field being read indicates the payload length.
+
+## Case study
+One of the most common CP implementing this realization is [Ethernet PowerLink](epl.md).

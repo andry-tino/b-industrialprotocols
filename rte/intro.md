@@ -9,7 +9,7 @@ Even though Ethernet on its own was not designed for time critical applications,
 The main reasons which motivated the community to push for Ethernet were:
 
 - [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite) protocol suite naturally stacks up on Ethernet. This opened up to the possibility of online/remote factory management.
-- Low cost (theoretically). The hardware for supporting Ethernet is not as expensive as that we can find in protocols fully supporting real time systems. However the limitations and unpredictability introduced by TCP/IP (such as [CSMA/CD](https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_detection)) has to be considered, thus adding costs to the original infrastructure in order to have a minimal time critical coverage.
+- Low cost (theoretically). The hardware for supporting Ethernet is not as expensive as that we can find in protocols fully supporting real time systems. However the limitations and unpredictability introduced by TCP/IP or other protocols such as [CSMA/CD](https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_detection) have to be considered, thus adding costs to the original infrastructure in order to have a minimal time critical coverage.
 - Good and high bandwidth. Ethernet was initially designed to operate on 10 mbit/s, a limit which was quite rapidly overtaken by the next generation of protocols which could support up to 100 Mbit/s thanks to [FastEthernet](https://en.wikipedia.org/wiki/Fast_Ethernet). In 1990, [Gigabit Ethernet](https://en.wikipedia.org/wiki/Gigabit_Ethernet) pushed the limit to 1000 Mbit/s as it was standardized as _IEEE 802.3z_.
 
 ## Adaptations
