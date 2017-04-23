@@ -24,10 +24,10 @@ Throughput $$B_{\text{RT}}$$, expressed in byte/s, of total amount of applicatio
 This is the percentage of bandwidth which can be utilized for non real time traffic. This PI is related to the previous one by the following equation:
 
 $$
-B_{\text{NRT}} = B - B \cdot (B_{\text{RT}} + \delta)
+B_{\text{NRT%}} = 100 \cdot \left(1 - 8 \cdot \frac{B_{\text{RT}}}{B} - \frac{\Delta}{B} \right)
 $$
 
-So
+As it is possible to see, to relate $$B_{\text{NRT%}}$$ to the Throughput RTE $$B_{\text{RT}}$$ and the total bandwodth $$B$$, we subtract from the latter the fraction of bandwidth occupied by $$B_{\text{NRT%}}$$ (converted into bit/s as $$B$$ is expressed in such a way) and the fraction of bandwidth taken by overhead traffic (control frames for example).
 
 ## Topology 
 Relation to delivery time
