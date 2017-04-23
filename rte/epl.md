@@ -36,10 +36,10 @@ If a node is able to send cyclic and acyclic traffic, then it must employ EPL. O
 ### Scheduling cycles
 Every communication cycle, referred to as: _Isochronous EPL Cycle_, is divided into 4 different periods:
 
-- **Start period** Lasts the time needed to convey the SoC frame (sent in broadcast) to all stations in the shared segment. This period duration should not vary, its duration is extremely connected to the SoC frame which, therefore, has very strict requirements in terms of delivery time and jitter.
-- **Isochronous period** Here the MN sends unicast poll request frames to every CN in their respective time slots (defined and handled by the MN itself). Real time traffic is scheduled here.
-- **Asynchronous period** Non-cyclic data transmissions are allowed, always supervised by the MN. Here non-real-time traffic is scheduled.
-- **Additional idle period** An idle time frame necessary to guarantee synchronization before starting an new cycle.
+1. **Start period** Lasts the time needed to convey the SoC frame (sent in broadcast) to all stations in the shared segment. This period duration should not vary, its duration is extremely connected to the SoC frame which, therefore, has very strict requirements in terms of delivery time and jitter.
+2. **Isochronous period** Here the MN sends unicast poll request frames to every CN in their respective time slots (defined and handled by the MN itself). Real time traffic is scheduled here.
+3. **Asynchronous period** Non-cyclic data transmissions are allowed, always supervised by the MN. Here non-real-time traffic is scheduled.
+4. **Additional idle period** An idle time frame necessary to guarantee synchronization before starting an new cycle.
 
 **MN polling** In the isochronous period, the MN sends (unicast) a _Poll-Request_ (or PReq) frame to every CN. If the polled CN has something to send, it will send a broacast _Poll-Response_ (or PRes) frame on the shared segment. Real time data can flow from one CN to other stations in this way.
 

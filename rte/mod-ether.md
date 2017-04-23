@@ -6,7 +6,7 @@ Solutions with strict constraints for real-time traffic need to change the hardw
 
 As it is possible to see, the physical layer employs a modified version of Ethernet.
 
-## Ethernet encapsulation
+### Ethernet encapsulation
 Since this type of realizations bypass upper layer protocols, it is necessary, in order for devices using TCP/IP and other protocols to cohexist together, to have the _EtherType_ field set to the specific ID of the protocol on top of modified Ethernet.
 
 ## Preferred topologies
