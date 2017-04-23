@@ -48,4 +48,6 @@ The limitation comes from the fact that non-EPL nodes, which do not use the EPL 
 
 > However, EPL nodes can perfectly operate as normal Ethernet devices.
 
-In order to overcome this issue, we must avoid mixing EPL and non-EPL devices on the same shared segment. Thus the network is split into more segments by a [router](https://en.wikipedia.org/wiki/Router_(computing\)) or a [bridge](https://en.wikipedia.org/wiki/Bridging_(networking\)), thus making the EPL segment a protected Ethernet.
+In order to overcome this issue, we must avoid mixing EPL and non-EPL devices on the same shared segment. Thus the network is split into more segments by a [router](https://en.wikipedia.org/wiki/Router_(computing)) or a [bridge](https://en.wikipedia.org/wiki/Bridging_(networking)), thus making the EPL segment a _protected Ethernet_.
+
+### Other 
