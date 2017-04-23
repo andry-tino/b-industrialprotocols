@@ -24,12 +24,21 @@ Since we have TDMA, synchronization of clocks is necessary in this CP. So all st
 
 **Real-time vs non-real-time traffic** The MN ensures that real-time traffic is scheduled in a cyclic phase where it polls every station for transmission and, if one was requested, grants it; on the other hand, non-real-time traffic is handled afterwards in later time slots reserved for non-real-time data.
 
+**Traffic types** EPL recognizes 2 types of traffic:
+
+- **Cyclic data**: This is the real time traffic.
+- **Acyclic data**: This is non-real-time traffic.
+
+**Important** Note that terms _cyclic_ and _acyclic_ have nothing to do to _periodic_ and _aperiodic_ real time traffic. 
+
+If a node is able to send cyclic and acyclic traffic, then it must employ EPL. Otherwise, if only non-real-time traffic is sent, that node is not required to employ EPL, in that case it must be deployed according to [EPL network protection specification](epl.md#epl-network-protection).
+
 ### Scheduling cycles
 Every communication cycle, referred to as: _Isochronous EPL Cycle_, is divided into 4 different periods:
 
 - **Start period** Lasts the time needed to convey the SoC frame (sent in broadcast) to all stations in the shared segment. This period duration should not vary, its duration is extremely connected to the SoC frame which, therefore, has very strict requirements in terms of delivery time and jitter.
 - **Isochronous period** Here the MN sends unicast poll request frames to every CN in their respective time slots (defined and handled by the MN itself). Real time traffic is scheduled here.
-- **Asynchronous period** Non-cyclic data transmissions are allowed, always supervised by the MN. Here non-real-time trafic is scheduled.
+- **Asynchronous period** Non-cyclic data transmissions are allowed, always supervised by the MN. Here non-real-time traffic is scheduled.
 - **Additional idle period** An idle time frame necessary to guarantee synchronization before starting an new cycle.
 
 **MN polling** In the isochronous period, the MN sends (unicast) a _Poll-Request_ (or PReq) frame to every CN. If the polled CN has something to send, it will send a broacast _Poll-Response_ (or PRes) frame on the shared segment. Real time data can flow from one CN to other stations in this way.
