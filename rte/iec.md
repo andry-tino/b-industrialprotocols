@@ -52,7 +52,7 @@ The document is organized into 5 sections, the most important for us are:
 
 **Communication Profile** The standard introduces the concept of _Communication Profile_ as a set of IEC 61158 protocols which can be composed together in order to create a network targeting specific requirements. Each CP uses protocols defined in IEC 61158:
 
-- Physical protocols are taken from IEC 61158-2
+- Physical protocols are taken from IEC 61158-2, or it is Ethernet (IEC 61784-2)
 - DLL protocols are taken from IEC 61158-3 and IEC 61158-4
 - AL protocols are taken from IEC 61158-5 and IEC 61158-6 
 
