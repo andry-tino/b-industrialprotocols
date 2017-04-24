@@ -1,7 +1,7 @@
 # Real Time Ethernet
 
 At the end of 90s the world of Industrial Automation started considering the possibility of using [Ethernet](https://en.wikipedia.org/wiki/Ethernet) in time critical environments.
-The technology was introduced by [Xerox-PARC](https://en.wikipedia.org/wiki/PARC_(company)) around 1970, and sice that time has been undergoing constant revising and performance improvements.
+The technology was introduced by [Xerox-PARC](https://en.wikipedia.org/wiki/PARC_(company) around 1970, and sice that time has been undergoing constant revising and performance improvements.
 
 Even though Ethernet on its own was not designed for time critical applications, well designed modifications could adapt the different protocols to be aligned with the different sets of requirements typical of automation contexts. 
 
