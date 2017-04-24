@@ -12,6 +12,10 @@ Profinet IO defines two categories of devices:
 
 All nodes can be arranged into different topologies, though daisy-chain and ring are preferred. It is not necessary to specify which topology one network is using as IO controllers are equipped with [LLDP](https://en.wikipedia.org/wiki/Link_Layer_Discovery_Protocol) which detects the topology automatically.
 
+![Profinet IO - IRT daisy chain network structure](../assets/profinet-io-1.png)
+
+The above picture shows an IRT daisy chain segment where one IO controller is in charge of different IO devices.
+
 ### Network settings
 In order to associate IO devices to IO controllers, an _Application Relation_ (AR) is defined between an IO controller and an IO device. In the context of an AR, many _Communication Relations_ (CR) are defined in order to distinguish the transmission type (alarms, data, etc.).
 
@@ -20,7 +24,11 @@ In order to properly set the network for orchestrating transmissions, every IO d
 #### Different subnets
 In Profinet IO, IO devices can belong to different networks. CRs define what kind of linking exist between nodes. Also different synchronization clock protocols can cohexist.
 
-One important aspect to consider is that IO devices which are expected to take part to IRT transmissions, must be interconnected together generating a connected network with the IO controller without non-IRT devices in the middle. This is necessary to guarantee that IRT traffic is properly scheduled.
+**IRT settings** One important aspect to consider is that IO devices which are expected to take part to IRT transmissions, must be interconnected together generating a connected network with the IO controller without non-IRT devices in the middle (contiguos IRT daisy chain). This is necessary to guarantee that IRT traffic is properly scheduled.
+
+![Profinet IO - IRT daisy chain network structure](../assets/profinet-io-2.png)
+
+The above image shows a more articulated network structure. Note that the IRT daisy chain is contiguos with no non-IRT devices interrupting the flow.
 
 ### Traffic types
 The protocol considers 3 types of traffic:
@@ -40,6 +48,10 @@ The IO controller defines one communication cycle called: _Sendclock cycle_ into
 
 ### Isochronous phase
 High time critical messages are scheduled. In order to ensure requirements on delivery time and jitter are met, Profinet IO, in this phase, configures all the switches in IRT IO devices to disable address evaluation. All switches will forward traffic basing on a timing table which is kept synchronized by means of a modified version of [IEC 1588](https://en.wikipedia.org/wiki/Precision_Time_Protocol). The IO controller will implement a [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access) via polling of every IRT IO device. Messages will flow in the topology (known to the IO controller thanks to LLDP) in a pipelined scheme across all connections between IRT devices. Replies will be conveied to the controller in the same exact way during the IRT phase.
+
+![Profinet IO - IRT transmissions](../assets/profinet-io-3.png)
+
+The picture shows in detail how the IRT transmissions are carried on during the isochronous phase. NOt how links are handled in a pipeline strategy during each time slot.
 
 By disabling the address evaluation in internal switches of IRT devices, Profinet IO eliminates the extra overhead caused by address interpretation. Thus providing high performance.
 
