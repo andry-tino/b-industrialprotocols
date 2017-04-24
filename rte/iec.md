@@ -68,3 +68,5 @@ Since CPs can be many, they are all organized into families (following manufactu
 | CPF-16 | Ethernet 802.3 | SERCOS |
 
 Families like Profibus and World-FIP are defined in IEC 61784-1, while all those specific to IEEE 802.3, like Ethernet PowerLink or Modbus, are defined in IEC 61784-2.
+
+> CPFs and CPs represent IEC's efforts to provide a taxonomy in the world of industrial networks.
