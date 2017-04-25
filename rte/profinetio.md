@@ -62,3 +62,6 @@ Transmissions are still under the IO controller arbitration, however the pipelin
 
 ### Non real time phase
 Here, the normal TCP/IP, UDP/IP and Ethernet is used.
+
+## Resources
+- [Profinet IO - System Decription](http://us.profinet.com/wp-content/uploads/2012/11/PROFINET_SystemDescription_ENG_2014_web.pdf): Overall protocol description from official Profibus - Profinet web site.
