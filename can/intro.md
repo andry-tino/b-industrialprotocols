@@ -26,6 +26,8 @@ On a separate track, starting from 1992, CAN was adopted by 2 major manufacturer
 
 Allen-Bradley developed [DeviceNet](https://en.wikipedia.org/wiki/DeviceNet) while Honeywell developed [Smart Distributed Systems (SDS)](https://en.wikipedia.org/wiki/SDS_Protocol). The former had more success and is still used today.
 
+![CAN and its evolutions](../assets/can-time.png)
+
 ---
 
 ## Main usages
