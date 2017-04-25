@@ -57,6 +57,8 @@ This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) $$\t
 
 In the CPs defined in IEC 61784, we often have the implementation of a [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access). In this context, one arbitrator node defines data transmission cycles for the different controlled stastions. This PI measures what shift it is possible to measure in the time-slots definition for every pair of nodes. 
 
+![Non-time-based synchronization accuracy](../assets/pi-ntbta.png)
+
 This PI provides an indication over how accurately different nodes are synchronized on the same time-slot when transmitting cyclic traffic (traffic to be scheduled under the context of a TDMA scheduling system). Usually jitter is expressed over [RMS](https://en.wikipedia.org/wiki/Root_mean_square).
 
 ### Redundancy recovery time
