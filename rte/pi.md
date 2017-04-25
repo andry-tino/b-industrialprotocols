@@ -25,6 +25,8 @@ CPs can be categorized basing on transmission capabilites. We find 3 very common
 ### Delivery time
 This PI measures the time $$\delta_D$$ needed to convey a [Service Data Unit](https://en.wikipedia.org/wiki/Service_data_unit) (payload of message) from a source node to a destination node. The measurement is performed at Application level, thus the value includes all overheads introduced by the intermediate protocols in the stack.
 
+![Delivery time](../assets/pi-dt.png)
+
 The standard defines 2 flavors for this PI:
 
 - **Best case scenario** The delivery time is measured in case no transmission error occurs.
