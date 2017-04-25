@@ -25,3 +25,17 @@ Even though a failure, some solutions were actually developed from CAL. Bosch hi
 On a separate track, starting from 1992, CAN was adopted by 2 major manufacturers: [Allen-Bradley](https://en.wikipedia.org/wiki/Allen-Bradley) and [Honeywell](https://en.wikipedia.org/wiki/Honeywell). They both designed and developed a distributed control system based on CAN, the project was discarded a few years later, though carried on by both of them separately.
 
 Allen-Bradley developed [DeviceNet](https://en.wikipedia.org/wiki/DeviceNet) while Honeywell developed [Smart Distributed Systems (SDS)](https://en.wikipedia.org/wiki/SDS_Protocol). The former had more success and is still used today.
+
+---
+
+## Main usages
+CAN is mainly used in automotive systems inside cars in order to connect the different electronic devices or also for controlling the engine. 
+
+However other applications started employing CAN since its introduction (given its high robustness), so we find, among the most important:
+
+- Agricultural machinery
+- Nautical electronics
+- Elevetors control
+- Printers
+- Medical industry (Image Diagnostics)
+- Robotics
