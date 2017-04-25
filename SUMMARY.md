@@ -10,3 +10,4 @@
       * [Ethernet PowerLink](rte/epl.md)
     * [Modified Ethernet](rte/mod-ether.md)
       * [Profinet IO](rte/profinetio.md)
+* [CAN](can/intro.md)
