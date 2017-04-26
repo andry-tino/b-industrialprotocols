@@ -6,8 +6,8 @@ Solutions with strict constraints for real-time traffic need to change the hardw
 
 As it is possible to see, the physical layer employs a modified version of Ethernet.
 
-### Ethernet encapsulation
-Since this type of realizations bypass upper layer protocols, it is necessary, in order for devices using TCP/IP and other protocols to cohexist together, to have the _EtherType_ field set to the specific ID of the protocol on top of modified Ethernet.
+## Encapsulation
+This realization takes advantage of [Ethernet encapsulation](ethernet-enc.md).
 
 ## Preferred topologies
 The most preferred topology for these architectures is the [daisy chain](https://en.wikipedia.org/wiki/Network_topology#Daisy_chain) as it enables ease of of cabling and reduces the costs associated to that. The topology that for sure we try to avoid is the [star](https://en.wikipedia.org/wiki/Star_network) which, on the opposite, implies a high cabling effort.
