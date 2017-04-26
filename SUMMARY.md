@@ -17,7 +17,7 @@
     * [Collision handling](can/phy-collision.md)
     * [Bus characterization](can/phy-bus.md)
     * [Encoding and synchronization](can/phy-enc-sync.md)
-  * [Priority management](can/prio.md)
+  * [Priority & address management](can/prio.md)
   * [Frame format](can/frame.md)
     * [Data frame](can/frame-data.md)
     * [Remote frame](can/frame-remote.md)
