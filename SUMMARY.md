@@ -14,7 +14,7 @@
 * [CAN](can/intro.md)
   * [Network structure](can/network.md)
   * [Physical layer](can/phy.md)
-  * [Bit encoding and synchronization](can/bit.md)
+  * [Priority management](can/prio.md)
   * [Frame format](can/frame.md)
     * [Data frame](can/frame-data.md)
     * [Remote frame](can/frame-remote.md)
