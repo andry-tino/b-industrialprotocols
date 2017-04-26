@@ -8,6 +8,7 @@ CAN does not apply any of these policies in order to grant permission on the bus
 
 - Arbitrating the bus.
 - Assigning priorities for transmissions.
+- Avoiding data loss and latency on collision, thus improving throughput.
 
 ## Addressing
 TODO
