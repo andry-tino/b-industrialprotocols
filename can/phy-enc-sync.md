@@ -5,10 +5,10 @@ Data is written on the bus by using the [Non Return to Zero (NRZ)](https://en.wi
 ## Electrical values
 Two electrical values are allowed: 
 
-| Name | Symbol | Logic value (on bus) |
-|:----:|:------:|:--------------------:|
-| Dominant | D | 0 |
-| Recessive | R | 1 |
+| Name | Symbol | Logic value (application) | Logic value on bus |
+|:----:|:------:|:-------------------------:|:------------------:|
+| Dominant | D | 1 | 0 |
+| Recessive | R | 0 | 1 |
 
 Since CAN assigns higher priority to lower levels, the low value is assigned to the dominant level.
 
