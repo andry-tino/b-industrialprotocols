@@ -64,3 +64,12 @@ We are showing the bitstream before and after transmission on the bus. Let's con
 2. $$k=2$$: `A[k] = 1` and `B[k] = 1`. They are the same value on the bus, no collision.
 2. $$k=3$$: `A[k] = 1` and `B[k] = 1`. They are the same value on the bus, no collision.
 2. $$k=4$$: `A[k] = 0` and `B[k] = 1`. `A` wins as the AND resurns `0`, the station feels nothing. `B` reads `0` on the bus when it was sending `1` so it understands that another station won the contention. `B` stops the transmission and waits for the current frame being transmitted to be done.
+
+If we convert the 2 frames into decimal numbers by considering the leftmost bit the MSB (Most Significant Bit):
+
+$$
+A = 1 \cdot 2^0 + 0 \cdot 2^1 + 1 \cdot 2^2 + 0 \cdot 2^3 + 0 \cdot 2^4 + 1 \cdot 2^5 + 1 \cdot 2^6 + 0 \cdot 2^7 =  1  + 4 + 32 + 64 = 101
+B = 1 \cdot 2^0 + 1 \cdot 2^1 + 1 \cdot 2^2 + 0 \cdot 2^3 + 1 \cdot 2^4 + 1 \cdot 2^5 + 1 \cdot 2^6 + 0 \cdot 2^7 = 1 + 2 + 4 + 16 + 32 + 64 = 119
+$$
+
+We can see that `A` has a higher priority because $$A < B$$!
