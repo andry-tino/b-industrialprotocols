@@ -50,6 +50,8 @@ Thanks to this mechanism, priority is basically given to the station sending the
 
 The priority can be calculated by converting the bitstream of a frame (on the bus) into a number. Remember that CAN inverts the bittream since dominant values are codified as low levels on the bus. Thus, the frame whose numeric conversion is lower gets higher priority.
 
+This process is called: _frame contention mechanism_ as it considers the whole frame, not to be confused with the contention on each single bit.
+
 ### An example
 Consider 2 frames:
 
@@ -75,3 +77,11 @@ B = 1 \cdot 2^0 + 1 \cdot 2^1 + 1 \cdot 2^2 + 0 \cdot 2^3 + 1 \cdot 2^4 + 1 \cdo
 $$
 
 We can see that `A` has a higher priority because $$A < B$$!
+
+## The role of the _Identifier_ field
+Every frame in CAN starts with a field called _Identifier_ which is the identifier of the variable whose value is being transmitted (or, to be more precise, whose value is matter of interest of the frame). 
+
+The frame contention (not the bit contention) occurs only on this field. Typically, different frames have different identifiers as they represent different variables. So as the concurrent transmission goes on, the collision detection will occur not after the last bit of the identifier field is sent.
+
+### Priority and producer/consumer
+As a note, it can happen that 2 frames with the same identifier are sent, so they will represent the same variable, however we will see in later chapters that a bit flag later in the frame indicates if the frame contains the value of the variable or is just a request for that variable. Of course the protocol will set the flag to `0` in the former case so that producing is prioritezed on consuming.
