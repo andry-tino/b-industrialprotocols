@@ -1,3 +1,5 @@
+(* Wolfram Mathematica 11+ *)
+
 ListLinePlot[{{40,1000},{100,500},{200,250},{500,125},{6000,10}},PlotLabel->"CAN supported bandwidths",PlotMarkers->{Automatic, 10},AxesLabel->{"Bus length (m)","Bit-rate (Kbit/s)"}]
 Show[%,ImageSize->Large]
 Rasterize[%,"Image"]
