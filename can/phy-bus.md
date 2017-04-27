@@ -21,6 +21,10 @@ $$
 B \cdot l \approx C = 50 \frac{\text{Mbit} \cdot \text{m}}{\text{s}}
 $$
 
+The relation can be visualized on a chart displaying supported bandwidths against bus lingths (table below):
+
+![CAN supported bandwidths](../assets/can-bandwidths.png)
+
 The following table shows some of the supported configurations:
 
 | Bus length | Max bandwidth |
@@ -30,8 +34,6 @@ The following table shows some of the supported configurations:
 | $$200 \text{m}$$ | $$250 \frac{\text{Kbit}}{\text{s}}$$ |
 | $$500 \text{m}$$ | $$125 \frac{\text{Kbit}}{\text{s}}$$ |
 | $$6 \text{m}$$ | $$10 \frac{\text{Kbit}}{\text{s}}$$ |
-
-![CAN supported bandwidths](../assets/can-bandwidths.png)
 
 ## Additional bus features
 CAN approves the utilization of repeaters: PHY devices which mirror the eletrical signal from one port onto the other in order to fight back signal attenuation and phase shifting (the signal can, therefore, reach distant stations). However the number of these devices has to be kept in control as they introduce delayes on the bus.
