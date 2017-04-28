@@ -23,9 +23,9 @@ Every node can have 3 error states basing on the values of these 2 counters. Its
 
 | State name | Condition | Capabilities | Error flag |
 |:----------:|:---------:|:-------------|:----------:|
-| _Error-Active_ | $$C_{\text{R}} \leq 127 \land \text{T}} \leq 127$$ | Takes part in communications | [Active Error Flag](frame-error.md#active-error-flag) |
-| _Error-Passive_ | $$C_{\text{R}} > 127 \lor \text{T}} > 127$$ | Takes part in communications (8 bit delay) | [Passive Error Flag](frame-error.md#passive-error-flag) |
-| _Bus-Off_ | $$C_{\text{R}} \geq 256 \lor \text{T}} \geq 256$$ | Cannot transmit but can receive | N/A |
+| _Error-Active_ | $$C_{\text{R}} \leq 127 \land C_{\text{T}} \leq 127$$ | Takes part in communications | [Active Error Flag](frame-error.md#active-error-flag) |
+| _Error-Passive_ | $$C_{\text{R}} > 127 \lor C_{\text{T}} > 127$$ | Takes part in communications (8 bit delay) | [Passive Error Flag](frame-error.md#passive-error-flag) |
+| _Bus-Off_ | $$C_{\text{R}} \geq 256 \lor C_{\text{T}} \geq 256$$ | Cannot transmit but can receive | N/A |
 
 The last column indicates what _Error flag_ the node will send on the bus in case it detects an error. Depending on it scurrent state, it might send an [Active Error Flag](frame-error.md#active-error-flag) or a [Passive Error Flag](frame-error.md#passive-error-flag).
 
