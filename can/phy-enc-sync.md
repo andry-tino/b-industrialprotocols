@@ -36,3 +36,5 @@ Decoding the output stream is easy:
 
 ## Idle
 When nothing is sent on the bus, what is the value read on it? It must be recessive, thus `1`.
+
+**Important** When in idle state, the bus will not perform bit stuffing.
