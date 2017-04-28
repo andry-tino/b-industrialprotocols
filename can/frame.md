@@ -20,7 +20,7 @@ In both versions of the standard, many fields are shared and some of them are di
 - **Data Length Code(DLC)** A 4 bit field specifying the length (in bytes) of field _Data_. It means that a CAN frame can contain a value up to $$2^4-1 = 15$$ bytes. However controllers will never send a value longer than **8 bytes**.
 - **Cyclic Redundancy Check (CRC)** A [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) error detecting code on the previous part of the frame.
 - **Acknowledgement slot (ACK)** A field used by producers and consumers to make sure data is properly transmitted.
-- **End Of Frame (EOF)** A stream of 7 recessive bits used to notify the end of a frame. Note that this field is not affected by stuffing.
+- **End Of Frame (EOF)** A stream of 7 recessive bits used to notify the end of a successfully sent frame. Note that this field is not affected by stuffing.
 - **InterMissoin Frame (IMF)** A 3 bit field with all recessive value marking a separation between one frame and the other. Note that this field is not affected by stuffing.
 
 ### Bit stuffing
