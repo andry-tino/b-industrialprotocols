@@ -1,0 +1,12 @@
+(* Wolfram Mathematica 11+ *)
+
+data={1,0,1,0,1,1,1,1,1,1,0,0,1,0,0,0,0,0,1,1,1}
+
+stream=(If[#==0,1,0])&/@data
+
+sstream={0,1,0,1,0,0,0,0,0,1,0,1,1,0,1,1,1,1,1,0,0}
+
+p[s_,t_]:=ListStepPlot[s,Ticks->{Range[Length[s]], Automatic},GridLines->{Range[Length[s]], {}},AspectRatio->1/4,Axes->{True,False},AxesLabel->{"Clock"},PlotLabel->t]
+
+GraphicsColumn[{p[data,"Original data stream"],p[stream,"Bit stream after encoding"],p[sstream,"Bit stream on bus"]},ImageSize->1200]
+Rasterize[%,"Image"]

@@ -22,7 +22,11 @@ Being a NRZ encoding, the synchronization mechanism is threatened in case of lon
 
 > When encoding, for every 5 consecutive bits having the same value, a 6th bit is generated having the opposite value. 
 
-So if the data being transmitted is: `00111111001`, the output bitstream will be: `001111101001`. Decoding the output stream is easy:
+So if the data being transmitted is: `00111111001`, the output bitstream will be: `001111101001`. 
+
+![CAN bit stuffing](../assets/can-stuffing.png)
+
+Decoding the output stream is easy:
 
 > When decoding, For every 5 consecutive bits having the same value, the following (opposite) bit is removed.
 
