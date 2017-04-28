@@ -22,7 +22,7 @@ Being a NRZ encoding, the synchronization mechanism is threatened in case of lon
 
 > When encoding, for every 5 consecutive bits having the same value, a 6th bit is generated having the opposite value. 
 
-So if the data being transmitted is: `00111111001`, the output bitstream will be: `001111101001`. 
+So if the data being transmitted is: `101011111100100000`, the dominant/recessive encoding will turn that stream into: `010100000011011111`, so the output bitstream on bus will finally be: `01010000010110111110`. The picture below shows this: 
 
 ![CAN bit stuffing](../assets/can-stuffing.png)
 
