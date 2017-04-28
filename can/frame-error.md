@@ -14,8 +14,8 @@ This frame is special as it is not sent as a whole, but in two different stages.
 ## Error states
 Every node keeps 2 error counters:
 
-- Receiver Error Counter (REC) $$C_{\text{R}} \in \textbb{N}$$
-- Transmit Error Counter (TEC) $$C_{\text{T}} \in \textbb{N}$$
+- Receiver Error Counter (REC) $$C_{\text{R}} \in \mathbb{N}$$
+- Transmit Error Counter (TEC) $$C_{\text{T}} \in \mathbb{N}$$
 
 Both counters start with a value of `0` and they get incremented/decremented depending on the node's behavior. The higher the value of one of these counters, the worse is the efficiency of the node.
 
