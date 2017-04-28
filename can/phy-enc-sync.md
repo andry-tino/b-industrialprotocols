@@ -33,3 +33,6 @@ Decoding the output stream is easy:
 **Fun facts** It has been calculated (via simulation) that, in average, every frame has a number of stuff bits ranging from 2 to 4.
 
 **Important** Bit stuffing is not always applied. When one frame is sent, not all fields are transmitted by using the bit stuffing encoding. Only the variable part of the frame is subject to stuffing, the last part of it has a fixed format which ensures a good number of edges.
+
+## Idle
+When nothing is sent on the bus, what is the value read on it? It must be recessive, thus `1`.
