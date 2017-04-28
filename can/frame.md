@@ -59,7 +59,7 @@ The extended protocol has a slightly different frame structure:
 CAN 2.0B was inroduced mainly to support more extended networks and a very high number of devices and field variables, that is why the identifier field is longer.
 
 - **Arbitration** The arbitration field is a compound of the SOF, _Identifier_, SRR, IDE, _ID Extension_ and RTR fields.
-- **Identifier** The field now is 11 + 18 bit long. 29 bits allow up to $$2^29$$ field variables (more than 500 millions).
+- **Identifier** The field now is 11 + 18 bit long. 29 bits allow up to $$2^{29}$$ field variables (more than 500 millions).
 - **Substitute Remote Request (SRR)** This bit is always sent recessive (`1`). In both frame formats, the IDE is the 14th bit. In order to preseve the structure of the frame, the SRR makes sure that normal frames take priority over extended frames in case two nodes (2.0A and 2.0B) send two frames (one normal and one extended) for the same variable. In such a situation, in both cases where the 2.0A frame is a data frame or a remote frame, it will take priority.
 
 > Extended frames, since longer than normal ones, cause the network to experience decay in transmission efficiency. Therefore, extended frames are not used very often.
