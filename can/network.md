@@ -13,4 +13,6 @@ CAN, differently from other standards, does not present an application layer as 
 ### Topology
 The only topology supported by the protocol is the shared bus. All nodes are connected to the same wired segment and the controller in each device will handle the bus arbitration.
 
+![CAN bus topology](../assets/can.png)
+
 One very important thing to notice in CAN is the absence of a centralized arbitrator. Other standards usually employ one special device (e.g. [Profinet](../ert/profinetio.md) and [EPL](../ert/epl.md)) which acts like a coordinator, granting access to the links to each controlled device. This does not happen in CAN which takes advantage of a **distributed control** strategy.
