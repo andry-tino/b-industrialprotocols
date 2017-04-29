@@ -4,7 +4,7 @@ There are many protocols based on CAN, 2 however are the most used today:
 
 - [BasicCAN](implementations.md#basiccan) by [Philips](https://en.wikipedia.org/wiki/Philips)
 - [FullCAN](implementations.md#fullcan) by [Intel](https://en.wikipedia.org/wiki/Intel)
-- [Hybrid] Both previous implementations are employed.
+- [Hybrid](implementations.md#hybrid) Both previous implementations are employed.
 
 These two implementations differ by 3 main factors:
 
