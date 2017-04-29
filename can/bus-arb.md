@@ -6,6 +6,12 @@ Here we want to consider what we have learnt so far and about the way CAN arbitr
 
 ![CAN bus considered in this example](../assets/can-2.png)
 
+We will consider the following examples:
+
+1. [Binary countdown](bus-arb.md#binary-countdown)
+
+---
+
 ## Binary countdown
 We know that frames are handled in a distributed prioritized queue thanks to the _Binary countdown_. Let's visualize it in action by considering that `Node 1`, `Node 2` and `Node 3` respectively want to send messages with the following IDs:
 
