@@ -51,3 +51,5 @@ Bus guardians are separate units which can be connected with nodes and separate 
 
 ## Fault confinement
 Thanks to the way CAN handles errors, every station operates in 3 states: _Error-Active_, _Error-Passive_ and _Bus-Off_ which we have already described. This mechanism is able to protect the bus from nodes which are not behaving fine. If a node eventually enters the _Bus-Off_ state, it will be forcibly disconnected from the bus in order to avoid doing any harm.
+
+This fault confinement handling mechanism is implemented in the MAC sublayer into a unit called **Fault Confinement Unit** (FCU). It is into this unit that the [REC and TEC counters](frame-error.md#error-states) are saved.
