@@ -29,4 +29,8 @@ We are of course visualizing only the part from SOC to _Data_ with some random d
 
 As we can see, the frame which wins the contention is `M1` because `M1 = M3 < M2` and `M1` is a data frame which take priority on `M3` which is a remote frame on the same variable.
 
+1. Until the 7th cycle, all frames generate no collision yet. 
+2. However, at the 8th cycle `Node 2` transmits `1` which, in AND with the other IDs, collides on the bus. `Node 2` only feels the collision and knows it lost the contention, thus holds off and interrupts the transmission of frame `M2`.
+3. `Node 1` and `Node 2` keep transmitting until the 13th cycle which marks the transmission of the RTR bit. Since `Node 1` is transmitting a data frame, it takes priority over `M3`. `Node 3` will stop and `Node 1` will complete its transmission.
+
 **Important** Remember that once a frame is being sent, other station that need to transmit something will have to wait to hear the EOF and IMF.
