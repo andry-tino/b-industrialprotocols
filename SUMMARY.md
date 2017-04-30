@@ -28,3 +28,4 @@
   * [Communication services](can/comm-svc.md)
   * [Information exchanges](can/info-exchange.md)
   * [Implementations of CAN](can/implementations.md)
+* [Automotive](automotive/intro.md)
