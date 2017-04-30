@@ -29,3 +29,7 @@
   * [Information exchanges](can/info-exchange.md)
   * [Implementations of CAN](can/implementations.md)
 * [Automotive](automotive/intro.md)
+  * [System requirements](automotive/req.md)
+  * [Protocols](automotive/protocols.md)
+    * [LIN](automotive/lin.md)
+    * [FlexRay](automotive/flexray.md)
