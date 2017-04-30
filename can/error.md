@@ -42,10 +42,10 @@ CAN, with all its transmission checks, is one of the most robust protocols in in
 
 > It has been calculated that the probability of an unmanaged error on the CAN bus is extremely low.
 
-## Bubble idiot
+## Babbling idiot
 Even though a lot is done to avoid unexpected conditions on the bus, there is a possible occurrance from which the protocol does not implement any protection shielding.
 
-It can happen, because of a whatever error condition on the node, that it starts emitting a continuos infinite dominant stream on the bus. This condition is known as _Bubble idiot_ and CAN cannot do anything about it. That is why an external component is employed: the **bus guardian**. 
+It can happen, because of a whatever error condition on the node, that it starts emitting a continuos infinite dominant stream on the bus. This condition is known as _Babbling idiot_ and CAN cannot do anything about it. That is why an external component is employed: the **bus guardian**. 
 
 Bus guardians are separate units which can be connected with nodes and separate them from the bus. The bit stream sent by the node is always inspected by the guardian, so if the guardian detects something is wrong on the stream sent by the station, it will disconnect it and save the bus. Bus guardians are deployed per node, one each!
 
