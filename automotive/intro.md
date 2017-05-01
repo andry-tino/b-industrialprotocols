@@ -25,12 +25,16 @@ Given the many components and the incredibly high cabling effort, these networks
 In 1986 [CAN](../can/intro.md) revolutionized the industry as the leading networking technology for interconnecting ECUs in cars.
 
 ## Car function domains
-In cars, the different functions of the many subsystems can be grouped into categories:
+In cars, the different functions of the many subsystems can be grouped into categories.
+
+> A _function domain_ is a set of systems designated to the same function.
+
+We recognize 4 very important function domains in cars:
 
 - [Powertrain](intro.md#powertrain) Engine and transmission control.
 - [Chassis](intro.md#chassis) Suspension, steering and braking control.
 
-Those 2 categories are real time function classes and need to be served by real time systems. They are in fact concerned with the safety on board and directly affect the control of the vehicle. Other classes are:
+Those 2 categories are real time function domains and need to be served by real time systems. They are in fact concerned with the safety on board and directly affect the control of the vehicle. Other classes are:
 
 - [Body](intro.md#body) Comfort on board.
 - [Telematics](intro.md#telematics) Integration with wireless communications, multimedia, interfaces, etc.
@@ -51,7 +55,7 @@ Furthermore, ECUs are moving towards a Time Triggered (TT) scheduling approach (
 With this term, we refer to the ability of interconnecting different components together with ease of deployment. Time triggered scheduling systems facilitate composability, since each ECU can be assigned to a time slot in the transmission cycle. When a system is composable, it reduces the inter-dependence with the other systems.
 
 ### Chassis
-ECUs related to the chassis cover:
+ECUs related to the chassis cover safety and motion control:
 
 - Safety systems
 - Vehicle dynamics control
@@ -74,7 +78,32 @@ With this term we refer to mechanical or hydraulic components in cars which get 
 - Shift-by-wire
 
 ### Body
-TODO
+In this functinoal domain, we find ECUs responsible for comfort management and accessories handling:
+
+- Climate control
+- Blinkers
+- Windows
+- Lights (interior, exterior)
+- Parking control
+- Car Access Systems (CAS) like smart keys or alarms
+
+All body systems are typically **triggered/activated by the driver** or passengers. Furthermore, they handle the exchange of **small pieces of information** across components.
+
+Given the simplicity (compared to the other domains) of these systems, no hard real time functionality has to be featured, thus networks here tend to be cheaper and simpler like [LIN](lin.md). From a traffic point of view, **low bandwidth** is usually required.
+
+**CAN integration** In this domain we really find a lot of systems. Given this condition and the fact that many different components communicate with each other, a high level of connectivity is required. To avoid increasing the cost, these systems are connected with each other by means of a hierarchical structure whose backbone is supported by [CAN](../can/intro.md).
 
 ### Telematics
-TODO
+Because of the rapid spread of luxury systems in cars, Wireless and multimedia systems are now fully integrated in such environments.
+
+- [Wireless](https://en.wikipedia.org/wiki/Wireless_network)
+- [Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)
+- Multimedia systems, TV, radio
+- Speech recognition
+- Navigation systems
+- Smart cars
+
+The characteristics of these domain is to include systems which **exchange an extremely large amount of data** consisting in heavvy information units (image stream, audio. etc.). **High bandwidth** is often required in these cases.
+
+#### On board computers
+Since cars are now also equipped with on-board systems, Internet connection is available. It is possible to connect phones and other devices. Also smart cars will enable remote control and road reading systems interfacing with the outside worll. Because of this increasing interfacing with the external world, **security** has become a huge concern. These systems must guarantee a very hogh level of protection of data being exchanged.
