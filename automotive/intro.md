@@ -107,3 +107,16 @@ The characteristics of these domain is to include systems which **exchange an ex
 
 #### On board computers
 Since cars are now also equipped with on-board systems, Internet connection is available. It is possible to connect phones and other devices. Also smart cars will enable remote control and road reading systems interfacing with the outside worll. Because of this increasing interfacing with the external world, **security** has become a huge concern. These systems must guarantee a very hogh level of protection of data being exchanged.
+
+#### Diagnostics
+Given recent world and European regulations on emissions and pollution, cars are required to be equipped with a whole set of sensors providing statistics on consumes and many other quantities. These components interact with the engine and the fuel injection systems, thus they need reliable transmissions.
+
+Typically we are not talking about high requirements in bandwidth or time, as many of these systems are just for monitoring values like:
+
+- Fuel levels
+- Engine temperature
+- System overall status
+- Central unit status
+- Consumptions
+
+They are especially needed when operating maintenance on the vehicle, so it is often required to have a data store unit to save all information into.
