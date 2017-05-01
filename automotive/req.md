@@ -57,3 +57,19 @@ For example, [CAN](../can/intro.md) is more flexible than [Profinet IO](../rte/p
 
 ## Security
 Many systems are accessible from outside of a car (Wireless or Bluetooth communication systems), and others from inside (enterteinment systems). Also it is possible to have direct access to some systems by wire. Manufacturers must protect users' data by implementing all the necessary protection.
+
+---
+
+## Requirements vs systems
+
+An overview of different requirements per system is provided following:
+
+| System | Fault tolerance | Predictability | Bandwidth | Flexibility | Security |
+|:-------|:---------------:|:-------------:|:----------:|:-----------:|:--------:|
+| Powertrain | Yes | Yes | Yes | No | No |
+| Chassis | Yes | Yes | Yes | No | No |
+| Body | Some | Some | Some | Yes | Yes |
+| Multimedia & enterteinment | No | Some | Yes | Yes | Some |
+| X-by-wire | Yes | Yes | Yes | No | No |
+| Telematics | No | Some | Some | Yes | Yes |
+| Diagnostics | No | Some | No | Yes | Yes |
