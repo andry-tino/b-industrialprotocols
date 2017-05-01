@@ -91,7 +91,7 @@ All body systems are typically **triggered/activated by the driver** or passenge
 
 Given the simplicity (compared to the other domains) of these systems, no hard real time functionality has to be featured, thus networks here tend to be cheaper and simpler like [LIN](lin.md). From a traffic point of view, **low bandwidth** is usually required.
 
-**CAN integration** In this domain we really find a lot of systems. Given this condition and the fact that many different components communicate with each other, a high level of connectivity is required. To avoid increasing the cost, these systems are connected with each other by means of a hierarchical structure whose backbone is supported by [CAN](../can/intro.md).
+**CAN integration** In this domain we really find a lot of systems. Given this condition and the fact that many different components communicate with each other, a high level of connectivity is required. To avoid increasing the cost, these systems are connected with each other by means of a hierarchical structure whose backbone is supported by [CAN](../can/intro.md). See [LIN](lin.md).
 
 ### Telematics
 Because of the rapid spread of luxury systems in cars, Wireless and multimedia systems are now fully integrated in such environments.
