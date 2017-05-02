@@ -32,6 +32,8 @@ The protocol provides ECUs that can be interconnected on a wired network which c
 
 The host can access communication services via the CC. This component employs ports to connect to the physical layer; actually each port from the CC is connected to a BD which regulates the access to one single channel. It means that transmissions can be sent to different channels.
 
+![FlexRay controller structure](../assets/flexray.png)
+
 ### Redundancy handling
 FlexRay makes redundancy a core feature and allows different configurations:
 
