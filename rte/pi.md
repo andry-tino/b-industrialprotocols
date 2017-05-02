@@ -57,11 +57,13 @@ In order to measure how well synchronization is performed, this PI will measure 
 ### Non-time-based synchronization accuracy
 This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) $$\tau$$ (jitter can be interpreted as displacement from mean value: [Variance](https://en.wikipedia.org/wiki/Variance) or [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation)) of the cyclic behavior of any pair of nodes in the network.
 
-In the CPs defined in IEC 61784, we often have the implementation of a [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access). In this context, one arbitrator node defines data transmission cycles for the different controlled stastions. This PI measures what shift it is possible to measure in the time-slots definition for every pair of nodes. 
+In the CPs defined in IEC 61784, we often have the implementation of a [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access). In this context, one arbitrator node defines data transmission cycles for the different controlled stastions. Every node will emit, in this context, cyclic traffic (frames); however when examining many periodic transmissions, it is possible to experience variations on the transmission instan inside every period: the jitter over this quantity is represented by this PI.
 
 ![Non-time-based synchronization accuracy](../assets/pi-ntbta.png)
 
-This PI provides an indication over how accurately different nodes are synchronized on the same time-slot when transmitting cyclic traffic (traffic to be scheduled under the context of a TDMA scheduling system). Usually jitter is expressed over [RMS](https://en.wikipedia.org/wiki/Root_mean_square).
+This PI provides an indication over how accurately different nodes are synchronized on the same time-slot when transmitting cyclic traffic (traffic to be scheduled under the context of a TDMA scheduling system). Usually jitter is expressed as an [RMS](https://en.wikipedia.org/wiki/Root_mean_square).
+
+The reason why it is called "Non time based" is because it is not measured in terms of clock skew, but in terms of the behavior of cyclic events (cyclic traffic).
 
 ### Redundancy recovery time
 This PI is related to failure recovery and it measures the maximum amount of time required for the network to become fully operational after an internal failure.
