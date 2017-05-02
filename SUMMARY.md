@@ -28,6 +28,7 @@
   * [Communication services](can/comm-svc.md)
   * [Information exchanges](can/info-exchange.md)
   * [Implementations of CAN](can/implementations.md)
+  * [CAN pros and cons](can/pros-cons.md)
 * [Automotive](automotive/intro.md)
   * [System requirements](automotive/req.md)
   * [Protocols](automotive/protocols.md)
