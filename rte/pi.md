@@ -57,7 +57,7 @@ In order to measure how well synchronization is performed, this PI will measure 
 ### Non-time-based synchronization accuracy
 This PI measures the maximum [jitter](https://en.wikipedia.org/wiki/Jitter) $$\tau$$ (jitter can be interpreted as displacement from mean value: [Variance](https://en.wikipedia.org/wiki/Variance) or [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation)) of the cyclic behavior of any pair of nodes in the network.
 
-In the CPs defined in IEC 61784, we often have the implementation of a [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access). In this context, one arbitrator node defines data transmission cycles for the different controlled stastions. Every node will emit, in this context, cyclic traffic (frames); however when examining many periodic transmissions, it is possible to experience variations on the transmission instan inside every period: the jitter over this quantity is represented by this PI.
+In the CPs defined in IEC 61784, we often have the implementation of a [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access). In this context, one arbitrator node defines data transmission cycles for the different controlled stastions. Every node will emit, in this context, cyclic traffic (frames); however when examining many periodic transmissions, it is possible to experience variations on the transmission instant inside every period: the jitter over the difference of this quantity measured on the same clock cycle between 2 nodes is represented by this PI.
 
 ![Non-time-based synchronization accuracy](../assets/pi-ntbta.png)
 
