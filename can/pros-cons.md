@@ -29,7 +29,7 @@ About the propagation delay $$\delta$$, we need to make it clear that this quant
 In order for the acquired value on the bus to be properly read by the transmitting node, the signal must have time to propagate to the other end of the bus ($$\delta$$) and come back again (one more $$\delta$$). This time has to be lower than half of the time spanned by one bit $$\tau_b$$:
 
 $$
-2 \delta < \frac{\tau_b}{2} \implies \delta < \frac{\tau_b}{4}
+2 \delta < \frac{\tau_b}{2} \iff \delta < \frac{\tau_b}{4}
 $$
 
 > The propagation time must be lower than one quarter of the bit transmission time in order to have effective arbitration.
