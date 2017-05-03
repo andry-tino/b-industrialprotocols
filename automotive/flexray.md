@@ -23,7 +23,11 @@ The protocol targets the **Powertrain** and **Chassis** function domains and is 
 Its first adoption was in 2008 when BMW employed the protocol in one of his models using a bus network.
 
 ### Network design
-The protocol provides ECUs that can be interconnected on a wired network which can be shaped into **many different supported topologies**, the most common being the bus. The ECUs include:
+The protocol provides ECUs that can be interconnected on a wired network which can be shaped into **many different supported topologies**, the most common being the bus. 
+
+![FlexRay network structure](../assets/flexray-net.png)
+
+All ECUs include:
 
 - An interface with the upper layers (the host).
 - An integrated Communication Controller (CC) providing communication services and connected to the physical layer through many ports (via different BDs).
@@ -43,4 +47,4 @@ FlexRay makes redundancy a core feature and allows different configurations:
 - **Time redundant channels** CCs can decide to send the same frame on the same channels (at the same time) twice after a certain delay.  The employment of **time redundancy** or **time/space redundancy** is an option to guarantee that a frame arrives at destination with extremely low fault probability.
 
 ## Medium access
-A modified TDMA is employed and it is called: _Flexible Time Division Multiple Access_ (FTDMA).
+A modified TDMA is employed and it is called: _Flexible Time Division Multiple Access_ (FTDMA), also known as _Minislotting_. As every TT-based approach,  a transmission cycle controlled by the master, called _Communication Cycle_ is to be considered and in the context of that cyckle, all frame exchanges are orchestrated by the master itself.
