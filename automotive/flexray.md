@@ -47,4 +47,27 @@ FlexRay makes redundancy a core feature and allows different configurations:
 - **Time redundant channels** CCs can decide to send the same frame on the same channels (at the same time) twice after a certain delay.  The employment of **time redundancy** or **time/space redundancy** is an option to guarantee that a frame arrives at destination with extremely low fault probability.
 
 ## Medium access
-A modified TDMA is employed and it is called: _Flexible Time Division Multiple Access_ (FTDMA), also known as _Minislotting_. As every TT-based approach,  a transmission cycle controlled by the master, called _Communication Cycle_ is to be considered and in the context of that cyckle, all frame exchanges are orchestrated by the master itself.
+A modified TDMA is employed and it is called: _Flexible Time Division Multiple Access_ (FTDMA), also known as _Minislotting_. As every TT-based approach,  a transmission cycle controlled by the master, called _Communication Cycle_ is to be considered and in the context of that cyckle, all frame exchanges are orchestrated by the master itself. The cycle is divided into phases called _segments_:
+
+1. Network communication time
+    1. **Static segment** Mandatory (a minimal part must be guaranteed). Consists of slots of fixed duration. Provides **deterministic communication timing** for controllers, each of which has one time slot in the segment assigned to itself for transmission.
+    2. **Dynamic segment** Optional. A fixed duration timeframe subdivided into _minislots_ (slots which lower duration than those in the statis segment) each of fixed duration. Provides **priority based scheduling** of frames with **support for preemption** in transmissions. 
+    3. **Symbol window** Optional. A time slot (same lingth as slots in the static segment) used by the protocol for control infromation exchange.
+2. **Network idle segment** Mandatory. Protocol control information exchange.
+
+### Configurations
+Given the mandatory/optional segments, 3 possible configurations can be considered (the idle segment is always considered to be present, so here we consider the communication time):
+
+- **Pure static configuration** Only the static segment is present.
+- **Mixed configuration** Static and dynamic segments are both present. The way bandwidth is balanced between them opens up to many possible sub-configurations. This configuration is very common.
+- **Pure dynamic configuration** All bandwidth is assigned to the dynamic segment. The static segment has the minimum length.
+
+The static segment, since mandatory, has a minimum length of 2 slots called: **degraded static segment**.
+
+## Bandwidth utilization
+High throughput is one of the objectives of FlexRay. Given its structure, statistics showed that:
+
+- Best case bandwidth utilization is about 70%.
+- Average bandwidth utilization is 60%.
+
+Percentages are referred to nominal maximum bandwidth supported by the protocol: 10 Mbit/s.
