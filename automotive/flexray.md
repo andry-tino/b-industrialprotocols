@@ -17,6 +17,7 @@ FlexRay operates with the following basic characteristics:
 - Bandwidth up to 10 Mbit/s.
 - Payload data up to 256 bytes.
 - Modified [TDMA](https://en.wikipedia.org/wiki/Time-division_multiple_access) channel access arbitration mechanism.
+- Indirect addressing. COntrollers do not transmit frames using addresses, because of TDMA, controllers know which controller is sending a frame in a specific slot.
 
 The protocol targets the **Powertrain** and **Chassis** function domains and is going to become the de-facto standard in many automotive systems effectively replacing [CAN](../can/intro.md).
 
@@ -54,6 +55,41 @@ A modified TDMA is employed and it is called: _Flexible Time Division Multiple A
     2. **Dynamic segment** Optional. A fixed duration timeframe subdivided into _minislots_ (slots which lower duration than those in the statis segment) each of fixed duration. Provides **priority based scheduling** of frames with **support for preemption** in transmissions. 
     3. **Symbol window** Optional. A time slot (same lingth as slots in the static segment) used by the protocol for control infromation exchange.
 2. **Network idle segment** Mandatory. Protocol control information exchange.
+
+### The static segment
+In the static segment, slots are assigned to controllers. This segment can be configured by specifying the number of slots and the duration of each slot. These settings have to be the same for all controllers (a so called **global contract**).
+
+Each slot is exclusively owned by one controller and this setting is **per-channel** and is saved in the controller! It means that different channels can have a different slot assignment configuration. But one thing all channels share is the number and duration of slots! So it is possible, in a 2-channel network, to have in the same slot, both channels experience the transmission of 2 different frames by 2 different controllers.
+
+**Frame identification** Identifying transmitting controllers is easy because of TDMA in this segment. The slot assignment configuration, saved per channel in each controller, provides the information for identifying transmitting controllers. It means that the frame itself can be identified by its slot position. The protocol, however, provides a _Message ID_ field in the payload section of the frame which can be used for identification. This ID provides an identification of the information being transmitted.
+
+Because of all these properties, the static segment provides a a deterministic communication timing in which identification and medium access is all driven by the TDMA (controlled by the master).
+
+### The dynamic segment
+This segment has a fixed duration expressed in number of minislots. While the static segment does not have a fixed length (it is derived from the number of configured slots), the dynamic slot has a fixed length.
+
+A **minislot** has a fixed length $$l_s$$ and is much lower than the one of a normal slot $$l_S$$: $$l_s \ll l_S$$. A minislot is not able to accomodate a frame. Also, similarly to slots in the static segment, **each minislot is exclusively owned by one controller** and a controller can transmit only in its own minislot.
+
+**Configuration** The length of a minislot (configurable as a global contract) is mainly determined by parameters related to the physical layer like **propagation delay** and **clock skew** across controllers.
+
+#### Transmission dynamics
+When the dynamic segment starts, each controller keeps a _Minislot counter_ $$C_s$$ which has to be the same across all of them (synchronization is required). 
+
+1. The counter is initialized to $$C_s = 0$$ at the beginning of the segment.
+2. Controllers which have a frame to send wait for their own minislot. As minislots pass, the counters ar increased: $$C_s = C_s + 1$$.
+3. Once a controller reaches its minislot, it starts sending the frame. This is sensed by other stations which will not transmit later and will hold the counter $$C_s$$ to its current value.
+4. As the transmitting controller sends the frame and all controllers hold their counters, what the network experiences is basically an expansion of the minislot of the transmitting controller.
+5. The transmitting controller will keep sending until the frame reaches its tail, so the last minislot is used.
+6. On the next slot, controllers keep incrementing their counters.
+
+> The expansion of a minislot reduces the number of minislots available in the dynamic segment.
+
+#### Priority handling
+This mechanism enables a priority handling of frames and a **demand-driven access strategy**. By ensuring that high priority controllers are assigned an earlier minislot, the protocol will take care of guaranteeing the correct **preemption** of high priority messages over low priority ones.
+
+> Minislots are expanded only in case the controller has something to send.
+
+**CAN and FlexRay** In chapter [Advantages and disanvantages of CAN](../can/pros-cons.md) we detailed that one of the characteristics of CAN is its non-preemptive behavior. FlexRay tries to overcome this limitation so that if a higher priority frame is to be sent, that will always take priority.
 
 ### Configurations
 Given the mandatory/optional segments, 3 possible configurations can be considered (the idle segment is always considered to be present, so here we consider the communication time):
