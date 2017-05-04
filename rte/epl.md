@@ -20,7 +20,7 @@ This communication system is called: _Slot Communication Network Management_.
 ## Transmission scheduling
 The MN acts like a bus arbitrator. All other stations on the shared segment are called _Controlled Nodes_ (or CN) and they can only initiate a transmission upon request by the MN.
 
-Since we have TDMA, synchronization of clocks is necessary in this CP. So all stations are clock-synchronized. The MN signals all CNs the beginning of new communication cycle by broadcasting a _Start-Of-Cycle_ (or SoC) frame.
+Since we have TDMA, synchronization of clocks is necessary in this CP. So all stations are **clock-synchronized**. The MN signals all CNs the beginning of new communication cycle by broadcasting a _Start-Of-Cycle_ (or SoC) frame.
 
 **Real-time vs non-real-time traffic** The MN ensures that real-time traffic is scheduled in a cyclic phase where it polls every station for transmission and, if one was requested, grants it; on the other hand, non-real-time traffic is handled afterwards in later time slots reserved for non-real-time data.
 

@@ -32,5 +32,13 @@ In order to achieve good levels of interoperability between systems and keep goo
 
 In automotive, espacially in the **Body** function domain, CAN/LIN is a common combination. Furthermore, since different LIN subsystems can have different requirements in terms of predictability, CAN is a good choice for interconnecting them as a protocol able to guarantee a robust and reliable transmission of frames gateway-to-gateway between different LIN networks.
 
+## LIN and EPL
+When compared to [EPL](../rte/epl.md), we can spot an important difference between these 2 protocols:
+
+- EPL performs a polling on nodes, no clock synchronization is required as the MN will take care of coordinating the stations. LIN, on the other side, needs synchornization
+- EPL Asks when node in unicast to transmit data, then that node responds in broadcast. In LIN, the master will send an header in broadcast by specifying the needed information, and a broadcast response will be sent afterwards.
+
+Both protocols implement a producer/consumer communication model, but in a different way.
+
 ## Extra functionalities
 LIN offers services to put nodes to sleep and to wake them up. This functionality is extremely important from the **energy consumption** point of view especially in those conditions were the engine is off.
