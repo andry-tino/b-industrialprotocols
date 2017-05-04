@@ -8,7 +8,7 @@ In order to cope with those limitations, the world of Industrial Automation and 
 We will investigate more regarding these technologies  and protocols:
 
 1. [Real Time Ethernet](rte/intro.md)
-    - [Modbus](rte/top-ethernet.md)
+    - [Modbus](rte/top-tcp-ip.md)
     - [Ethernet PowerLink](rte/epl.md)
     - [Profinet IO](rte/profinetio.md)
 2. [CAN](can/intro.md)

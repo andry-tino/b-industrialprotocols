@@ -34,3 +34,4 @@
   * [Protocols](automotive/protocols.md)
     * [LIN](automotive/lin.md)
     * [FlexRay](automotive/flexray.md)
+* [Summary](epilogue.md)
