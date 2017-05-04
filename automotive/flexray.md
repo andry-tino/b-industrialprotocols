@@ -107,3 +107,15 @@ High throughput is one of the objectives of FlexRay. Given its structure, statis
 - Average bandwidth utilization is 60%.
 
 Percentages are referred to nominal maximum bandwidth supported by the protocol: 10 Mbit/s.
+
+## Why FlexRay is important
+Today this protocol is regarded as one of the most efficient and powerful. The reason is simple:
+
+> FlexRay successfully attempts to get the most from the strong points of [CAN](../can/intro,md) and TDMA-based protocols.
+
+The idea is simple:
+
+- CAN, by means of the Binary Countdown, is able to achieve scheduling via a distributed priority queue. This approach lacks the determinism in transmissions as it does not guarantee with extreme accuracy when a frame will be sent.
+- TDMA-based protocols are able to achieve high determinism in transmissions. This approach cannot guarantee priorities in scheduling as everyone will have a slot for transmitting; if someone has, in a certain moment, a very high priority message to transmit and its slot is passed, that station will have to wait.
+
+FlexRay is able to achieve determinism in the static segment and priority handling in the dynamic one. Also, thanks to minislotting, **preemptive priority scheduling** is possible as frames with higher priorities will be scheduled first in the dynamic segment.
