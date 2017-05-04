@@ -67,4 +67,12 @@ CAN 2.0B was inroduced mainly to support more extended networks and a very high 
 ## CAN 2.0B Passive
 It is not possible to use CAN 2.0A and CAN 2.0B controllers on the same bus as this leads to transmission errors, thus making the network enter an unstable state. That happens because CAN 2.0A controllers cannot handle the extended ID. 
 
-In order to cope with this condition, a third category was introduced: _CAN 2.0B Passive_. These controllers are an advanced version of CAN 2.0A controllers as they basically send only normal frames but they can receive also extended ones (which will be ignored). This enables normal and extended frames to be sent on the same bus: by using CAN 2.0B and CAN 2.0B Passive controllers.
+In order to cope with this condition, a third category was introduced: _CAN 2.0B Passive_. These controllers are an advanced version of CAN 2.0A controllers as they basically send only normal frames but they can receive also extended ones (which will be ignored). 
+
+| Protocol version | Send | Receive |
+|:-----------------|:----:|:-------:|
+| CAN 2.0A | Can send only **normal** frames | Can receive only **normal** frames |
+| CAN 2.0B | Can send only **extended** frames | Can receive **both** frames |
+| CAN 2.0B Passive | Can send only **normal** frames | Can receive **normal** and **extended** (ignored) frames |
+
+This enables normal and extended frames to be sent on the same bus: by using CAN 2.0B and CAN 2.0B Passive controllers.
