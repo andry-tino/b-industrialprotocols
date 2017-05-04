@@ -5,8 +5,13 @@ In manufacturing environments and industrial automation contexts, it is not poss
 In order to cope with those limitations, the world of Industrial Automation and Engineering has come up with different solutions. Today, industrial environments deploy Real Time Networks and protocols targeting time critical applications.
 
 ## Under analysis
-We will investigate more regarding these technologies:
+We will investigate more regarding these technologies  and protocols:
 
 1. [Real Time Ethernet](rte/intro.md)
-2. [Automotive](automotive/intro.md)
-3. [Other](other/intro.md)
+    - [Modbus](rte/top-ethernet.md)
+    - [Ethernet PowerLink](rte/epl.md)
+    - [Profinet IO](rte/profinetio.md)
+2. [CAN](can/intro.md)
+3. [Automotive](automotive/intro.md)
+    - [LIN](automotive/lin.md)
+    - [FlexRay](automotive/flexray.md)
